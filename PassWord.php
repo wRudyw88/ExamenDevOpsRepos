@@ -7,7 +7,8 @@ class PassWord extends  TestCase
 {
     public function verrifyPassWord($chaine){
 
-        if(  strlen($chaine) === 8 ) {
+        if( strlen($chaine) === 8 && preg_match("/[A-Za-z0-9]?(*-+;°_*)+",$chaine)
+            &&  preg_match("/[A-Za-z]?[0-9]+(*-+;°_*)+",$chaine) ) {
             return TRUE ;
         }
 
