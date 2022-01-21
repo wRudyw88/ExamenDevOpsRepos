@@ -34,5 +34,15 @@ class PassWordTest
         //Assert
         $this->assertEquals (TRUE, $verrifyPassWord);
     }
+    public function testOneIntGivenPositifPaswordWithSpecialCharMustResturnTrue(){
+        // Arrange
+        $PassWord = new PassWord();
+
+        // Act
+        $verrifyPassWord = $PassWord->verrifyPassWord('azertyu1');
+
+        //Assert
+        $this->assertEquals (TRUE, $verrifyPassWord);
+    }
 
 }
