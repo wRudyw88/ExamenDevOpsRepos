@@ -7,7 +7,7 @@ class PassWordTest
         $PassWord = new PassWord();
 
         // Act
-        $verrifyPassWord = $PassWord->verrifyPassWord(12345678);
+        $verrifyPassWord = $PassWord->verrifyPassWord('12345678');
 
         //Assert
         $this->assertEquals (TRUE, $verrifyPassWord);
@@ -18,7 +18,18 @@ class PassWordTest
         $PassWord = new PassWord();
 
         // Act
-        $verrifyPassWord = $PassWord->verrifyPassWord(12345678);
+        $verrifyPassWord = $PassWord->verrifyPassWord('1238');
+
+        //Assert
+        $this->assertEquals (False, $verrifyPassWord);
+    }
+
+    public function testOneSpecialCharGivenPositifPaswordWithSpecialCharMustResturnTrue(){
+        // Arrange
+        $PassWord = new PassWord();
+
+        // Act
+        $verrifyPassWord = $PassWord->verrifyPassWord('1234567+');
 
         //Assert
         $this->assertEquals (TRUE, $verrifyPassWord);
